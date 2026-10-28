@@ -1,0 +1,31 @@
+{
+ "name": "دليل مشروع الرعاية",
+ "short_name": "دليل الرعاية",
+ "description": "دليل مقدمي الخدمات الصحية - نقابة المهندسين المصرية 2026-2027",
+ "lang": "ar",
+ "dir": "rtl",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#FBF6EC",
+ "theme_color": "#2F5597",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
