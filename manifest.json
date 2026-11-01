@@ -1,31 +1,39 @@
 {
- "name": "دليل مشروع الرعاية",
- "short_name": "دليل الرعاية",
- "description": "دليل مقدمي الخدمات الصحية - نقابة المهندسين المصرية 2026-2027",
- "lang": "ar",
- "dir": "rtl",
- "start_url": "./index.html",
- "scope": "./",
- "display": "standalone",
- "orientation": "portrait",
- "background_color": "#FBF6EC",
- "theme_color": "#2F5597",
- "icons": [
-  {
-   "src": "icons/icon-192.png",
-   "sizes": "192x192",
-   "type": "image/png"
-  },
-  {
-   "src": "icons/icon-512.png",
-   "sizes": "512x512",
-   "type": "image/png"
-  },
-  {
-   "src": "icons/icon-maskable-512.png",
-   "sizes": "512x512",
-   "type": "image/png",
-   "purpose": "maskable"
-  }
- ]
+  "name": "دليل مشروع الرعاية - نقابة المهندسين المصرية",
+  "short_name": "دليل الرعاية",
+  "description": "دليل مقدمي الخدمات العلاجية - نقابة المهندسين المصرية 2026-2027",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B3D2C",
+  "theme_color": "#0F5A3E",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }
