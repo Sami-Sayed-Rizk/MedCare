@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B2D5B">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="دليل مشروع الرعاية - نقابة المهندسين المصرية 2026-2027">
 <meta name="theme-color" content="#0F5A3E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="دليل الرعاية">
@@ -10,8 +13,6 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="color-scheme" content="light dark">
-<meta name="description" content="دليل مشروع الرعاية - نقابة المهندسين المصرية 2026-2027">
 <title>دليل مشروع الرعاية - نقابة المهندسين المصرية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -441,18 +442,34 @@ button{text-align:center}
 .sheet .sh-body{padding-bottom:18px}
 .cp{margin-inline-start:4px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:8px;padding:1px 8px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;vertical-align:middle}
 /* search & filter screen: royal silver field engraved with the syndicate emblem, fine royal-gold filigree, subtle olive touch */
-#scrFilters{position:relative;overflow:hidden;min-height:100vh;min-height:100dvh;color:#1F2A3A;
+#scrFilters{position:relative;overflow:hidden;isolation:isolate;min-height:100vh;min-height:100dvh;color:#1F2A3A;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23B8912F' stroke-width='0.8' opacity='0.35'%3E%3Ccircle cx='60' cy='60' r='44'/%3E%3Ccircle cx='60' cy='60' r='30' stroke-dasharray='2 4'/%3E%3Cpath d='M60 16 L104 60 L60 104 L16 60 Z'/%3E%3Ccircle cx='0' cy='0' r='8'/%3E%3Ccircle cx='120' cy='120' r='8'/%3E%3Ccircle cx='0' cy='120' r='8'/%3E%3Ccircle cx='120' cy='0' r='8'/%3E%3C/g%3E%3C/svg%3E"),radial-gradient(circle at 50% 40%,rgba(255,255,255,.75),transparent 60%),radial-gradient(circle at 0% 100%,rgba(107,122,58,.42),transparent 45%),radial-gradient(circle at 100% 0%,rgba(107,122,58,.30),transparent 38%),linear-gradient(165deg,#F4F6F9 0%,#D5DBE4 50%,#B8C1CE 100%);
   background-size:120px 120px,auto,auto,auto,auto;background-repeat:repeat,no-repeat,no-repeat,no-repeat,no-repeat}
-#scrFilters::before,#scrFilters::after{content:"";position:absolute;left:50%;top:60%;width:min(78vw,330px);aspect-ratio:1/1;background:center/contain no-repeat;pointer-events:none;z-index:0}
+#scrFilters::before,#scrFilters::after{content:"";position:absolute;left:50%;top:60%;width:min(78vw,330px);aspect-ratio:1/1;background:center/contain no-repeat;pointer-events:none;z-index:-1}
 #scrFilters::before{background-image:var(--engr,none);opacity:.5;transform:translate(-50%,-50%) translate(-2px,-2px)}
 #scrFilters::after{background-image:var(--engrW,none);opacity:.95;transform:translate(-50%,-50%)}
 #scrFilters>.head{background:rgba(236,240,246,.97);border-bottom:1px solid rgba(139,118,50,.35);box-shadow:0 6px 14px rgba(90,100,120,.14)}
 #scrFilters>.pickers{position:relative;z-index:3}
 #scrFilters>.actions{position:relative;z-index:1}
-.adCarousel{position:relative;width:min(88vw,340px);height:206px;margin:16px auto 0;overflow:hidden;border-radius:20px;z-index:1}
-.adTrack{display:flex;direction:ltr;height:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.adCard{flex:0 0 100%;height:100%;margin:0;padding:0;border:0;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;border-radius:20px;box-shadow:0 14px 30px rgba(0,0,0,.35);transition:transform .12s}
+.adCarousel{position:relative;direction:ltr;width:min(88vw,340px);height:206px;margin:16px auto 0;overflow:hidden;border-radius:20px;z-index:1}
+.adTrack{display:flex;direction:ltr;height:100%;width:600%;animation:adSlide 15s infinite;animation-timing-function:ease-in-out}
+@keyframes adSlide{0%,25%{transform:translateX(0)}33.3333%,58.3333%{transform:translateX(-16.6667%)}66.6667%,91.6667%{transform:translateX(-33.3333%)}100%{transform:translateX(-50%)}}
+.topBar{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3;padding:0 16px}
+.topBar a,.topBar button{font-family:inherit;font-weight:800;font-size:11px;text-decoration:none;cursor:pointer;border-radius:999px;padding:7px 14px;border:1px solid rgba(232,208,140,.7);color:#F5EBD0;background:rgba(255,255,255,.08)}
+.topBar .installBtn{background:linear-gradient(120deg,rgba(232,208,140,.9),rgba(201,162,74,.9));color:#0B3D2C;border:0;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.topBar .updLink{border-color:rgba(61,220,132,.8);color:#BDF5D8}
+.topBar .hidden{display:none!important}
+#splash .guide{position:fixed;inset:0;z-index:200;background:rgba(3,20,14,.7);display:flex;align-items:center;justify-content:center;padding:16px}
+#splash .guide[hidden]{display:none}
+.guideBox{background:#FFFFFF;color:#1F2A3A;border-radius:18px;padding:18px 18px 14px;max-width:380px;width:100%;max-height:86vh;overflow:auto;text-align:right;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.guideBox h3{margin:0 0 10px;font-size:16px;color:#0F5A3E}
+.gSec{margin:10px 0;padding:10px 12px;background:#F3F8F5;border-radius:12px;border-right:4px solid #C9A24A}
+.gSec b{display:block;font-size:14px;color:#0F5A3E;margin-bottom:4px}
+.gSec ol{margin:0;padding-right:18px;font-size:13px;line-height:1.8}
+.gNote{font-size:12px;color:#4A5568;margin:10px 0 6px;line-height:1.7}
+.gBtn{width:100%;height:42px;border:0;border-radius:12px;background:#0F5A3E;color:#fff;font-weight:800;font-family:inherit;font-size:14px;cursor:pointer}
+@media (prefers-reduced-motion: reduce){.adTrack{animation:none}}
+.adCard{flex:0 0 16.6667%;height:100%;margin:0;padding:0;border:0;background:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;border-radius:20px;box-shadow:0 14px 30px rgba(0,0,0,.35);transition:transform .12s}
 .adCard:active{transform:scale(.97)}
 .adCard img{display:block;max-width:86%;max-height:86%;width:auto;height:auto;object-fit:contain;pointer-events:none}
 .adDots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px;pointer-events:none}
@@ -469,6 +486,24 @@ button{text-align:center}
 
 <!-- ============ Splash ============ -->
 <section id="splash" aria-label="الافتتاحية">
+  <div class="guide" id="guide" hidden>
+    <div class="guideBox" role="dialog" aria-modal="true" aria-labelledby="gTitle">
+      <h3 id="gTitle">تحميل التطبيق على الموبايل</h3>
+      <div class="gSec"><b>أندرويد (Chrome)</b>
+        <ol><li>افتح هذا الرابط من متصفح <b>Chrome</b>.</li><li>اضغط النقاط الثلاث ⋮ أعلى الشاشة.</li><li>اختر <b>تثبيت التطبيق</b> أو <b>إضافة إلى الشاشة الرئيسية</b>.</li><li>اضغط <b>تثبيت</b>، فتظهر أيقونة التطبيق على شاشتك الرئيسية.</li></ol>
+      </div>
+      <div class="gSec"><b>آيفون (Safari)</b>
+        <ol><li>افتح هذا الرابط من متصفح <b>Safari</b> (لا يعمل التثبيت من Chrome على الآيفون).</li><li>اضغط زر المشاركة ⬆ أسفل الشاشة.</li><li>اختر <b>إضافة إلى الشاشة الرئيسية</b>.</li><li>اضغط <b>إضافة</b>، فتظهر أيقونة التطبيق على شاشتك الرئيسية.</li></ol>
+      </div>
+      <p class="gNote">بعد التثبيت افتح التطبيق من أيقونته على الشاشة الرئيسية، وليس من المتصفح.</p>
+      <button id="gClose" class="gBtn" type="button">إغلاق</button>
+    </div>
+  </div>
+  <div class="topBar" id="topBar">
+    <button class="installBtn hidden" id="installBtn" type="button">⬇ تحميل التطبيق</button>
+    <a class="dlLink hidden" id="dlLink" href="https://github.com/Sami-Sayed-Rizk/MedCare/releases/latest" target="_blank" rel="noopener">⬇ تنزيل</a>
+    <a class="updLink hidden" id="updLink" href="https://github.com/Sami-Sayed-Rizk/MedCare/releases/latest" target="_blank" rel="noopener">تحديث الدليل</a>
+  </div>
   <div class="flash" aria-hidden="true"></div>
   <svg class="geo" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <g fill="none" stroke="rgba(61,220,132,.28)" stroke-width="1.2">
@@ -1062,6 +1097,7 @@ if(!SR){ ['micSearch','micChat'].forEach(id=>{ const b=document.getElementById(i
 let rec=null, recTarget=null;
 function setNote(id,msg,err){ const el=document.getElementById(id); el.textContent=msg||''; el.classList.toggle('err',!!err); }
 function startVoice(target){
+  if(!navigator.onLine){ setNote(target==='S'?'voiceNoteS':'voiceNoteC','الميكروفون يُستخدم فقط عند الاتصال بالإنترنت. تحقق من الاتصال ثم حاول مرة أخرى، أو اكتب كلمات البحث.',true); return; }
   if(!SR){ setNote(target==='S'?'voiceNoteS':'voiceNoteC','هذا المتصفح لا يدعم البحث بالصوت. اكتب كلمات البحث.',true); return; }
   if(rec){ rec.stop(); return; }
   rec=new SR(); rec.lang='ar-EG'; rec.interimResults=true; rec.continuous=false; rec.maxAlternatives=1;
@@ -1419,16 +1455,48 @@ function adSearch(i){
   setNote('voiceNoteS','');
   renderFilters(); showPane('S'); doSearch();
 }
-document.querySelectorAll('.adCard[data-ad]').forEach(b=>b.addEventListener('click',()=>adSearch(+b.dataset.ad)));
+document.addEventListener('click',e=>{ const c=e.target.closest&&e.target.closest('.adCard[data-ad]'); if(c) adSearch(+c.dataset.ad); });
 (function adCarousel(){
-  const track=document.getElementById('adTrack'), dots=[...document.querySelectorAll('#adDots i')];
+  const track=document.getElementById('adTrack'); if(!track) return;
+  [...track.children].forEach(c=>track.appendChild(c.cloneNode(true)));   // 3 ads -> seamless loop of 6
+  const dots=[...document.querySelectorAll('#adDots i')];
   let idx=0;
   setInterval(()=>{
     if(document.getElementById('splash').classList.contains('hidden')) return;
-    idx=(idx+1)%3;
-    track.style.transform='translateX(-'+(idx*100)+'%)';
-    dots.forEach((d,k)=>d.classList.toggle('on',k===idx));
-  },4500);
+    idx=(idx+1)%3; dots.forEach((d,k)=>d.classList.toggle('on',k===idx));
+  },5000);
+})();
+
+// ---- app version, install (browser only), simple install link (installed), update link (online + newer release) ----
+const APP_VERSION='2.0.0';
+const RELEASE_API='https://api.github.com/repos/Sami-Sayed-Rizk/MedCare/releases/latest';
+const isStandalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+let deferredInstall=null;
+(function installAndUpdate(){
+  const installBtn=document.getElementById('installBtn'), dlLink=document.getElementById('dlLink'), updLink=document.getElementById('updLink');
+  if(isStandalone){ dlLink.classList.remove('hidden'); } else { installBtn.classList.remove('hidden'); }
+  window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredInstall=e; });
+  window.addEventListener('appinstalled',()=>{ installBtn.classList.add('hidden'); dlLink.classList.remove('hidden'); });
+  installBtn.addEventListener('click',async()=>{
+    if(deferredInstall){ deferredInstall.prompt(); try{ await deferredInstall.userChoice; }catch(e){} deferredInstall=null; return; }
+    document.getElementById('guide').hidden=false;   // no direct prompt: show the steps for Android and iPhone
+  });
+  document.getElementById('gClose').addEventListener('click',()=>{ document.getElementById('guide').hidden=true; });
+  document.getElementById('guide').addEventListener('click',e=>{ if(e.target.id==='guide') e.currentTarget.hidden=true; });
+  const newer=(a,b)=>{ const x=a.split('.').map(Number), y=b.split('.').map(Number); for(let i=0;i<3;i++){ if((x[i]||0)>(y[i]||0)) return true; if((x[i]||0)<(y[i]||0)) return false; } return false; };
+  async function checkUpdate(){
+    updLink.classList.add('hidden');
+    if(!navigator.onLine) return;
+    try{
+      const r=await fetch(RELEASE_API,{headers:{Accept:'application/vnd.github+json'}});
+      if(!r.ok) return;
+      const j=await r.json(); const latest=String(j.tag_name||'').replace(/^v/,'');
+      if(latest && newer(latest,APP_VERSION)){ updLink.textContent='تحديث الدليل ('+j.tag_name+')'; updLink.href=j.html_url||updLink.href; updLink.classList.remove('hidden'); }
+    }catch(e){}
+  }
+  checkUpdate();
+  window.addEventListener('online',checkUpdate);
+  window.addEventListener('offline',()=>updLink.classList.add('hidden'));
 })();
 
 </script>
