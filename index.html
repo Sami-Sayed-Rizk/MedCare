@@ -500,8 +500,6 @@ button{text-align:center}
     </div>
   </div>
   <div class="topBar" id="topBar">
-    <button class="installBtn hidden" id="installBtn" type="button">⬇ تحميل التطبيق</button>
-    <a class="dlLink hidden" id="dlLink" href="https://github.com/Sami-Sayed-Rizk/MedCare/releases/latest" target="_blank" rel="noopener">⬇ تنزيل</a>
     <a class="updLink hidden" id="updLink" href="https://github.com/Sami-Sayed-Rizk/MedCare/releases/latest" target="_blank" rel="noopener">تحديث الدليل</a>
   </div>
   <div class="flash" aria-hidden="true"></div>
@@ -1468,19 +1466,11 @@ document.addEventListener('click',e=>{ const c=e.target.closest&&e.target.closes
 })();
 
 // ---- app version, install (browser only), simple install link (installed), update link (online + newer release) ----
-const APP_VERSION='2.0.0';
+const APP_VERSION='2.1.0';
 const RELEASE_API='https://api.github.com/repos/Sami-Sayed-Rizk/MedCare/releases/latest';
 const isStandalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
-let deferredInstall=null;
 (function installAndUpdate(){
-  const installBtn=document.getElementById('installBtn'), dlLink=document.getElementById('dlLink'), updLink=document.getElementById('updLink');
-  if(isStandalone){ dlLink.classList.remove('hidden'); } else { installBtn.classList.remove('hidden'); }
-  window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferredInstall=e; });
-  window.addEventListener('appinstalled',()=>{ installBtn.classList.add('hidden'); dlLink.classList.remove('hidden'); });
-  installBtn.addEventListener('click',async()=>{
-    if(deferredInstall){ deferredInstall.prompt(); try{ await deferredInstall.userChoice; }catch(e){} deferredInstall=null; return; }
-    document.getElementById('guide').hidden=false;   // no direct prompt: show the steps for Android and iPhone
-  });
+  const updLink=document.getElementById('updLink');
   document.getElementById('gClose').addEventListener('click',()=>{ document.getElementById('guide').hidden=true; });
   document.getElementById('guide').addEventListener('click',e=>{ if(e.target.id==='guide') e.currentTarget.hidden=true; });
   const newer=(a,b)=>{ const x=a.split('.').map(Number), y=b.split('.').map(Number); for(let i=0;i<3;i++){ if((x[i]||0)>(y[i]||0)) return true; if((x[i]||0)<(y[i]||0)) return false; } return false; };
