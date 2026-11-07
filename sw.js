@@ -1,5 +1,5 @@
 // دليل الرعاية - service worker: يعمل دون إنترنت بعد أول زيارة
-const VERSION = 'dulil-raaya-v4';
+const VERSION = 'dulil-raaya-v8';
 const SHELL = [
   './', './index.html', './manifest.json',
   './icons/icon-192.png', './icons/icon-512.png',
